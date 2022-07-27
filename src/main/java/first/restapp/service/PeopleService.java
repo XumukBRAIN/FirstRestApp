@@ -34,4 +34,10 @@ public class PeopleService {
     public void save(Person person){
         peopleRepository.save(person);
     }
+
+    @Transactional
+    public void delete(int id){
+        peopleRepository.deleteById(id);
+    }
+
 }

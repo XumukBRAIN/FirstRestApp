@@ -79,4 +79,10 @@ public class PeopleController {
         return new ResponseEntity<>(personErrorResponse, HttpStatus.BAD_REQUEST);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public void deletePerson(@PathVariable("id") int id){
+        peopleService.delete(id);
+        System.out.println("Person deleted");
+    }
+
 }
